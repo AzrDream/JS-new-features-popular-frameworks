@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="02-ajax-get.js"></script>
+    <script>
+        window.onload = function (ev) {
+            let oBtn = document.querySelector("button");
+            oBtn.onclick = function () {
+                ajax("04-ajax-get.php", {
+                        "userName":"lnj",
+                        "userPwd":"123456"
+                    }, 3000
+                    , function (xhr) {
+                        alert(xhr.responseText);
+                    }, function (xhr) {
+                        alert("请求失败");
+                    }
+                );
+            }
+        }
+    </script>
+</head>
+<body>
+<button>发送请求</button>
+</body>
+</html>
