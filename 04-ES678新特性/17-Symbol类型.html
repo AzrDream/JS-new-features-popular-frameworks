@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name = Symbol("name");
+    let say = Symbol("say");
+    let obj = {
+        // 注意点: 如果想使用变量作为对象属性的名称, 那么必须加上[]
+        [name]: "jkw",
+        [say]: function () {
+            console.log("say");
+        }
+    }
+    // obj.name = "it666";
+    obj[Symbol("name")] = "it666";
+    console.log(obj);
+</script>
+</body>
+</html>
