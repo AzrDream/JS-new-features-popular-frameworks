@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    fetch("http://127.0.0.1/jQuery/Ajax/41.php?teacher=lnj&age=34", {
+        method: "get"
+    }).then(function (res) {
+        // console.log(res.text());
+        // return res.text();
+        return res.json();
+    }).then(function (data) {
+        console.log(data);
+        console.log(typeof data);
+    }).catch(function (e) {
+        console.log(e);
+    });
+    */
+
+    fetch("http://127.0.0.1/jQuery/Ajax/41.php", {
+        method: "post",
+        body: JSON.stringify({teacher:"zq", age:666})
+    }).then(function (res) {
+        // console.log(res.text());
+        // return res.text();
+        return res.json();
+    }).then(function (data) {
+        console.log(data);
+        console.log(typeof data);
+    }).catch(function (e) {
+        console.log(e);
+    });
+</script>
+</body>
+</html>
