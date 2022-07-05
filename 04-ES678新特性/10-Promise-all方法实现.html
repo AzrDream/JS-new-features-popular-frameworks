@@ -131,22 +131,44 @@
         _isFunction(fn){
             return typeof fn === "function";
         }
+        static all(list){
+            return new MyPromise(function (resolve, reject) {
+                let arr = [];
+                let count = 0;
+                for(let i = 0; i < list.length; i++){
+                    let p = list[i];
+                    p.then(function (value) {
+                        arr.push(value);
+                        count++;
+                        if(list.length === count){
+                            resolve(arr);
+                        }
+                    }).catch(function (e) {
+                        reject(e);
+                    });
+                }
+            });
+        }
     }
 </script>
 <script>
-    let promise = new MyPromise(function (resolve, reject) {
-        // resolve();
-        // reject();
+    let p1 = new MyPromise((resolve, reject) => {
+        resolve("111");
+    });
+    let p2 = new MyPromise((resolve, reject) => {
         setTimeout(function () {
-            // resolve();
-            reject();
-        }, 5000);
+            resolve("222");
+        },5000);
     });
-    let p2 = promise.then(function () {
-        console.log("成功");
+    let p3 = new MyPromise((resolve, reject) => {
+        setTimeout(function () {
+            resolve("333");
+        },3000);
     });
-    p2.catch(function () {
-        console.log("失败");
+    MyPromise.all([p1,p2,p3]).then(function (result) {
+        console.log("成功", result);
+    },function (err) {
+        console.log("失败", err);
     });
 </script>
 </body>
