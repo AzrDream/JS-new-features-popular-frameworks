@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+    function request(fn) {
+        setTimeout(()=>{
+            fn("拿到的数据");
+        },1000);
+    }
+    request((data)=>{
+        console.log(data, 1);
+        request((data)=>{
+            console.log(data, 2);
+            request((data)=>{
+                console.log(data, 3);
+            });
+        });
+    });
+     */
+    function request() {
+        return new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve("拿到的数据");
+            }, 1000);
+        });
+    }
+    request().then(data=>{
+        console.log(data, 1);
+        return request();
+    }).then(data=>{
+        console.log(data, 2);
+        return request();
+    }).then(data=>{
+        console.log(data, 3);
+    })
+</script>
+</body>
+</html>
