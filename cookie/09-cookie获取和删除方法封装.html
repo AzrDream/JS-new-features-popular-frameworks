@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09-cookie获取和删除方法封装</title>
+    <script>
+        window.onload = function () {
+            function addCookie(key,value,day,path,domain) {
+                // 1.处理默认保存的路径
+                let index = window.location.pathname.lastIndexOf("/");
+                let currentPath = window.location.pathname.slice(0, index);
+                path = path || currentPath;
+
+                // 2.处理默认保存的domain
+                domain = domain || document.domain;
+
+                // 3.处理默认过期时间
+                if(!day) {
+                    document.cookie = `${key}=${value};path =${path};domain=${domain};`;
+                }else{
+                    let date = new Date();
+                    date.setDate(date.getDate() + day);
+                    document.cookie = `${key}=${value};path =${path};domain=${domain};expires=${date.toGMTString()};`;
+                }
+            }
+
+            function getCookie(key) {
+                let res = document.cookie.split(";");
+                for(let i = 0; i < res.length; i++){
+                    let temp = res[i].split("=");
+                    if(temp[0].trim() === key){
+                        return temp[1];
+                    }
+                }
+            }
+
+            // 默认情况下只能删除默认路径中保存的cookie, 如果想删除指定路径保存的cookie, 那么必须在删除的时候指定路径才可以
+            function delCookie(key, path) {
+                addCookie(key, getCookie(key), -1, path);
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
