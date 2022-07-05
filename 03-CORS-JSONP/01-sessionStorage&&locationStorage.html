@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button class="btn1">保存</button>
+<button class="btn2">删除</button>
+<button class="btn3">修改</button>
+<button class="btn4">查找</button>
+<button class="btn5">清空</button>
+<script>
+    let oBtn1 = document.querySelector(".btn1");
+    let oBtn2 = document.querySelector(".btn2");
+    let oBtn3 = document.querySelector(".btn3");
+    let oBtn4 = document.querySelector(".btn4");
+    let oBtn5 = document.querySelector(".btn5");
+    oBtn1.onclick = function () {
+        // sessionStorage.setItem("name", "lnj");
+        // sessionStorage.setItem("age", "34");
+        localStorage.setItem("name", "lnj");
+    };
+    oBtn2.onclick = function () {
+        sessionStorage.removeItem("name");
+    };
+    oBtn3.onclick = function () {
+        sessionStorage.setItem("name", "it666");
+    };
+    oBtn4.onclick = function () {
+        let value = sessionStorage.getItem("name");
+        alert(value);
+    };
+    oBtn5.onclick = function () {
+        sessionStorage.clear();
+    };
+</script>
+</body>
+</html>
