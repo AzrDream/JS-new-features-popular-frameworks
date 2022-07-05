@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-ajax-post</title>
+    <script src="04-ajax.js"></script>
+    <script>
+        window.onload = function (ev) {
+            let oBtn = document.querySelector("button");
+            oBtn.onclick = function (ev1) {
+                ajax("POST", "08-ajax-post.php",{
+                    "userName":"lnj",
+                    "userPwd":"321"
+                }, 3000, function (xhr) {
+                    alert(xhr.responseText);
+                }, function (xhr) {
+                    alert("请求失败");
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<button>发送请求</button>
+</body>
+</html>
