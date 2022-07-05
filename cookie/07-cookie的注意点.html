@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            // 不可以设置，必须一条一条设置
+            // document.cookie = "name=jkw;age=22";
+            document.cookie = "name=jkw";
+            document.cookie = "age=22";
+
+            // 如果在同一个浏览器中,默认情况下下一级路径就可以访问
+            // 如果在同一个浏览器中,想让上一级目录也能访问保存的cookie,那么需要添加一个path属性才可以;
+            document.cookie = "name=zs;path=/;";
+
+            // 我们在www.azrdream.com下面保存了一个cookie,
+            // 那么我们在edu.azrdream.com中是无法访问的
+            // 如果想在edu.azrdream.com中也能访问,那么我们需要再添加一个domain属性才可以;
+            document.cookie = "name=zs;path=/;domain=azrdream.com;";
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
