@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            // document.cookie = "age=22";
+            addCookie("gender","man",1,"/","127.0.0.1");
+            function addCookie(key,value,day,path,domain) {
+                // 1.处理默认保存的路径
+                let index = window.location.pathname.lastIndexOf("/");
+                let currentPath = window.location.pathname.slice(0, index);
+                path = path || currentPath;
+
+                // 2.处理默认保存的domain
+                domain = domain || document.domain;
+
+                // 3.处理默认过期时间
+                if(!day) {
+                    document.cookie = `${key}=${value};path =${path};domain=${domain};`;
+                }else{
+                    let date = new Date();
+                    date.setDate(date.getDate() + day);
+                    document.cookie = `${key}=${value};path =${path};domain=${domain};expires=${date.toGMTString()};`;
+                }
+            }
+            // let index = window.location.pathname.lastIndexOf("/");
+            // let currentPath = window.location.pathname.slice(0, index);
+            // console.log(currentPath);
+            // console.log(document.domain);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
