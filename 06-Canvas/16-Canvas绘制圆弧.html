@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<!--1.在body中创建一个canvas标签-->
+<canvas width="500px" height="500px"></canvas>
+<script>
+    // 2.通过js代码拿到canvas标签
+    let oCanvas = document.querySelector("canvas");
+    // 3.从canvas标签中获取到绘图工具
+    let oCtx = oCanvas.getContext("2d");
+    oCtx.arc(100,100,100,0,Math.PI * 2);
+    oCtx.stroke();
+</script>
+</body>
+</html>
