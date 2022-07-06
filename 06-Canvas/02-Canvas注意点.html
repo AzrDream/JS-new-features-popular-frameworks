@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<!--1.在body中创建一个canvas标签-->
+<canvas width="500px" height="500px"></canvas>
+<script>
+    // 2.通过js代码拿到canvas标签
+    let oCanvas = document.querySelector("canvas");
+    // 3.从canvas标签中获取到绘图工具
+    let oCtx = oCanvas.getContext("2d");
+    // 4.通过绘图工具在canvas标签上绘制图形
+    // 4.1设置路径的起点
+    oCtx.moveTo(50,50.5);
+    // 4.2设置路径的终点
+    oCtx.lineTo(200,50.5);
+    // 4.3告诉canvas将这些点连接起来
+    oCtx.stroke();
+</script>
+</body>
+</html>
