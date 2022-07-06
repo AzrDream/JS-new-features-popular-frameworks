@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px"></canvas>
+<script>
+    let oCanvas = document.querySelector("canvas");
+    let oCtx = oCanvas.getContext("2d");
+    /*
+    oCtx.moveTo(50,50);
+    oCtx.lineTo(200,50);
+    oCtx.lineTo(200,200);
+    oCtx.closePath();
+    oCtx.fillStyle = "blue";
+    oCtx.fill();
+     */
+
+    oCtx.moveTo(100,100);
+    oCtx.lineTo(300,100);
+    oCtx.lineTo(300,300);
+    oCtx.lineTo(100,300);
+    oCtx.closePath();
+
+    oCtx.moveTo(250,150);
+    oCtx.lineTo(150,150);
+    oCtx.lineTo(150,250);
+    oCtx.lineTo(250,250);
+    oCtx.closePath();
+
+    // oCtx.stroke();
+    oCtx.fill();
+    // 非零环绕原则
+</script>
+</body>
+</html>
