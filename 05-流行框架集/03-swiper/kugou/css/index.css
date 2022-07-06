@@ -55,3 +55,63 @@ body{
     width: 68.2%;
     margin-top: 10%;
 }
+/*第六屏*/
+.section6>.top{
+    margin-top: 30%;
+}
+.section6>.top>img:nth-of-type(1){
+    display: block;
+    margin: 0 auto;
+    width: 26%;
+}
+.section6>.top>p:nth-of-type(1){
+    font-size: 14px;
+    color: #9c9c9c;
+    text-align: center;
+    margin-top: 2%;
+}
+.section6>.top>p:nth-of-type(2){
+    text-align: center;
+    margin-top: 5%;
+}
+.section6>.top>p:nth-of-type(2) img{
+    width: 33%;
+    margin: 0 10px;
+}
+.section6>.top>p:nth-of-type(3), .section6>.top>p:nth-of-type(4){
+    margin-top: 10%;
+    font-size: 14px;
+    color: #666;
+    line-height: 25px;
+    text-align: center;
+}
+.section6>.top>p:nth-of-type(4){
+    margin-top: 0;
+}
+.section6>.top>p:nth-of-type(5){
+    color: #0090ff;
+    margin-top: 15%;
+    text-align: center;
+    font-size: 14px;
+}
+.section6>.top>p:nth-of-type(5) a{
+    color: #0090ff;
+}
+.section6>.top>p:nth-of-type(5) span{
+    margin: 0 5%;
+}
+.section6>.bottom{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+}
+.section6>.bottom>p{
+    font-size: 12px;
+    color: #9c9c9c;
+    text-align: center;
+    line-height: 20px;
+}
+.section6>.bottom>p>i{
+    color: #0090ff;
+}
