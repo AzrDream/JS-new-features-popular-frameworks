@@ -42,3 +42,16 @@ body{
     -webkit-animation-name: myFadeIn;
     animation-name: myFadeIn
 }
+/*第2~5屏*/
+.section>img{
+    display: block;
+    margin: 0 auto;
+}
+.section>img:nth-of-type(1){
+    width: 60.8%;
+    margin-top: 10.9375%;
+}
+.section>img:nth-of-type(2){
+    width: 68.2%;
+    margin-top: 10%;
+}
