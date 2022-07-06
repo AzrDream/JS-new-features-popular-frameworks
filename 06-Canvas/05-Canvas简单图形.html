@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px"></canvas>
+<script>
+    let oCanvas = document.querySelector("canvas");
+    let oCtx = oCanvas.getContext("2d");
+    oCtx.moveTo(50,50);
+    oCtx.lineTo(200,50);
+    oCtx.lineTo(200,200);
+    // 注意点:如果通过lineTo来闭合图形，那么是不能很好的闭合
+    oCtx.closePath();
+    oCtx.lineWidth = 20;
+    oCtx.lineJoin = "round";
+    // 注意点：默认情况下不会自动从最后一个点连接到起点
+    oCtx.stroke();
+</script>
+</body>
+</html>
