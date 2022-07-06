@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<canvas></canvas>
+<script>
+    let oCanvas = document.querySelector("canvas");
+    let oCtx = oCanvas.getContext("2d");
+    // 修改线条的高度
+    oCtx.lineWidth = 50;
+    // 修改线条的颜色
+    oCtx.strokeStyle = "blue";
+    // 修改线条的两端样式
+    oCtx.lineCap = "round";
+    oCtx.moveTo(50,50);
+    oCtx.lineTo(200,50);
+    oCtx.stroke();
+</script>
+</body>
+</html>
