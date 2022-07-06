@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: skyblue;
+        }
+    </style>
+<!--    <script src="js/jquery-3.1.1.js"></script>-->
+    <script src="js/zepto.js"></script>
+    <script src="js/event.js"></script>
+</head>
+<body>
+<button>我是按钮</button>
+<div></div>
+<script>
+    let oBtn = $("button");
+    oBtn.click(()=>{
+        $("div").css({
+            backgroundColor:'red'
+        })
+    })
+</script>
+</body>
+</html>
