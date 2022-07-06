@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<!--1.在body中创建一个canvas标签-->
+<canvas width="500px" height="500px"></canvas>
+<script>
+    // 2.通过js代码拿到canvas标签
+    let oCanvas = document.querySelector("canvas");
+    // 3.从canvas标签中获取到绘图工具
+    let oCtx = oCanvas.getContext("2d");
+
+    // 1.创建一个渐变的方案
+    let linearGradient = oCtx.createLinearGradient(100,100,300,300);
+    /*
+    第一个参数是一个百分百 0-1
+    第二个参数是一个颜色
+    * */
+    linearGradient.addColorStop(0, "green");
+    linearGradient.addColorStop(0.5, "yellow");
+    linearGradient.addColorStop(1, "blue");
+
+    oCtx.fillStyle = linearGradient;
+    oCtx.fillRect(100,100,200,200);
+</script>
+</body>
+</html>
