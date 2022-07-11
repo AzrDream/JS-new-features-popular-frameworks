@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02-前端开发常用单位-百分比</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            width: 200px;
+            height: 100px;
+            background: red;
+        }
+        .son{
+            /**/
+            width: 50%;
+            height: 50%;
+
+            /*
+            padding-top: 50%;
+            padding-bottom: 50%;
+            padding-left: 50%;
+            padding-right: 50%;
+             */
+            /*
+            margin-top: 50%;
+            margin-bottom: 50%;
+            margin-left: 50%;
+            margin-right: 50%;
+            background: blue;
+             */
+            border: 50% solid #000;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script>
+    /*
+    1.什么是百分比?
+    百分比是前端开发中的一个动态单位, 永远都是以当前元素的父元素作为参考进行计算
+    例如父元素宽高都是200px, 设置子元素宽高是50%, 那么子元素宽高就是100px
+
+    2.百分比特点
+    2.1子元素宽度是参考父元素宽度计算的
+    2.2子元素高度是参考父元素高度计算的
+    2.3子元素padding无论是水平还是垂直方向都是参考父元素宽度计算的
+    2.4子元素margin无论是水平还是垂直方向都是参考父元素宽度计算的
+    2.5不能用百分比设置元素的border
+
+    结论: 百分比是一个动态的单位, 会随着父元素宽高的变化而变化(相对单位)
+    * */
+</script>
+</body>
+</html>
