@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>14-移动端常用适配方案四补充</title>
+    <script>
+
+        let scale = 1.0 / window.devicePixelRatio;
+        console.log(scale);
+        let text = `<meta name="viewport" content="width=device-width, initial-scale=${scale}, maximum-scale=${scale}, minimum-scale=${scale}, user-scalable=no">`;
+        document.write(text);
+        /**/
+
+        console.log(window.innerWidth);
+    </script>
+</head>
+<body>
+</body>
+</html>
