@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11-移动端常用适配方案三</title>
+    <script>
+        /*
+        注意点: 通过JS动态计算当前屏幕每一份大小的好处: 不用写很多的媒体查询
+                坏处: 切换了屏幕尺寸之后需要刷新界面才有效
+                      而媒体查询如果切换了屏幕的尺寸不需要重新刷新界面
+        * */
+        document.documentElement.style.fontSize = window.innerWidth / 7.5 + "px";
+    </script>
+    <style type="text/less">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        1.计算设计图片每一份大小: 750 / 7.5 = 100px
+        2.计算当前屏幕每一份大小: 当前屏幕宽度 / 和设计图相同的分数 = 当前屏幕每一份大小
+        */
+        /*
+        @media screen and (max-width: 320px){
+            html{
+                font-size: 42.67px;
+            }
+        }
+        @media screen and (min-width: 375px){
+            html{
+                font-size: 50px;
+            }
+        }
+        @media screen and (min-width: 414px){
+            html{
+                font-size: 55.2px;
+            }
+        }
+         */
+        .top{
+            position: relative;
+        }
+        .top>img{
+            width: 100%;
+            height: auto;
+        }
+        .top>p{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 80/100rem;
+            font-size: 36/100rem;
+            color: #fff;
+        }
+        .middle, .bottom{
+            position: relative;
+            height: 290/100rem;
+        }
+        .main{
+            border: 1px dashed #0d7efb;
+            border-radius: 5/100rem;
+            padding: 10/100rem;
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .main>img:nth-of-type(1){
+            width: 410/100rem;
+            height: 270/100rem;
+            vertical-align: bottom;
+        }
+        .main>img:nth-of-type(2){
+            width: 84/100rem;
+            height: 84/100rem;
+            vertical-align: bottom;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 60/100rem;
+        }
+        .bottom{
+            margin-top: 35/100rem;
+        }
+    </style>
+    <script src="js/less.js"></script>
+</head>
+<body>
+<div class="top">
+    <img src="images/bg.png" alt="">
+    <p>实名认证</p>
+</div>
+
+<div class="middle">
+    <div class="main">
+        <img src="images/back.png" alt="">
+        <img src="images/add.png" alt="">
+    </div>
+</div>
+
+<div class="bottom">
+    <div class="main">
+        <img src="images/back.png" alt="">
+        <img src="images/add.png" alt="">
+    </div>
+</div>
+
+</body>
+</html>
