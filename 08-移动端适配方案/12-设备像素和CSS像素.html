@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-设备像素和CSS像素</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<script>
+    /*
+    1.什么是设备像素和CSS像素?
+    1.1设备像素又称为物理像素, 是"物理屏幕"上真实存在的发光点，只有屏幕一经出厂就固定不会改变
+    1.2CSS像素又称为逻辑像素，是编程世界中虚拟的东西, 我们通过代码设置的像素都是逻辑像素
+
+    例如: iPhone3G/iPhone3GS 3.5英寸/ 逻辑像素320*480 / 设备像素320*480
+          iPhone4/4S         3.5英寸/ 逻辑像素320*480 / 设备像素640*960
+    也就是说CSS像素和设备像素在有的时候是不一样的
+
+    3.什么时候不一样?为什么不一样?
+    3.1在PC端，1个CSS像素往往都是对应着电脑屏幕的1个物理像素,
+     所以我们无需关心PC端的CSS像素和设备像素
+
+    3.2在手机端，最开始其实1个CSS个像素也是对应着手机屏幕的1个物理像素,
+    但是后来一个改变世界的男人(乔布斯)改变了这一切~
+    从iPhone4开始，苹果公司推出了所谓的retina视网膜屏幕。
+    iPhone4的屏幕尺寸却没有变化，但是像素点却多了一倍
+    这就导致了在1个CSS个像素等于1个物理像素的手机上, 我们设置1个CSS像素只会占用1个物理像素
+    而在1个CSS个像素不等于1个物理像素的手机上, 我们设置1个CSS像素就会占用2个物理像素
+    所以仔细观察你会发现同样是1像素但是在retina视网膜屏幕的手机上会粗一些
+
+    https://segmentfault.com/a/1190000015736900
+    https://ask.csdn.net/questions/692608
+    */
+</script>
+</body>
+</html>
