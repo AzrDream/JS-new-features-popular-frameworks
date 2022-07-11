@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-前端开发常用单位-em</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .father{
+            /*font-size: 15px;*/
+        }
+        .son{
+            /*font-size: 12px;*/
+            width: 10em;
+            height: 10em;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+<script>
+    /*
+    1.什么是em?
+    em是前端开发中的一个动态单位, 是一个相对于元素字体大小的单位
+    例如font-size: 12px; ,那么1em就等于12px
+
+    2.em特点
+    2.1当前元素设置了字体大小, 那么就相对于当前元素的字体大小
+    2.2当前元素没有设置字体大小, 那么就相当于第一个设置字体大小的祖先元素的字体大小
+    2.3如果当前元素和所有祖先元素都没有设置大小, 那么就相当于浏览器默认的字体大小
+
+    结论: em是一个动态的单位, 会随着参考元素字体大小的变化而变化(相对单位)
+    * */
+</script>
+</body>
+</html>
