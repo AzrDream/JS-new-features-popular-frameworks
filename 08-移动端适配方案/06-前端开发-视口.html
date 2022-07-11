@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>06-前端开发-视口</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /*
+        div{
+            margin: 0 auto;
+        }
+        .header-in{
+            width: 980px;
+            height: 100px;
+            background: red;
+        }
+        .main-in{
+            width: 980px;
+            height: 300px;
+            background: green;
+        }
+        .footer-in{
+            width: 980px;
+            height: 100px;
+            background: blue;
+        }
+         */
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<!--
+<div class="header">
+    <div class="header-in"></div>
+</div>
+<div class="main">
+    <div class="main-in"></div>
+</div>
+<div class="footer">
+    <div class="footer-in"></div>
+</div>
+-->
+<script>
+    /*
+    1.什么是视口?
+    视口简单理解就是可视区域大小我们称之为视口
+    在PC端，视口大小就是浏览器窗口可视区域的大小
+    在移动端, 视口大小并不等于窗口大小, 移动端视口宽度被人为定义为了980
+
+    2.为什么是980而不是其他的值?
+    因为过去网页的版心都是980
+    乔老爷子为了能够让网页在移动端完美的展示, 所以将iOS手机视口的大小定义为了980
+    后来谷歌也觉得这是一个非常牛X的方案, 所以Android手机的视口也定义为了980
+
+    3.移动端自动将视口宽度设置为980带来的问题
+    虽然移动端自动将视口宽度设置为980之后让我们可以很完美的看到整个网页
+    但是由于移动端的物理尺寸(设备宽度)是远远小于视口宽度的
+    所以为了能够在较小的范围内看到视口中所有的内容, 那么就必须将内容缩小
+    (和前面讲解Canvas时讲解的viewbox一样, 近大远小原理)
+
+    4.如何保证在移动端不自动缩放网页的尺寸?
+    通过meta设置视口大小
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    width=device-width 设置视口宽度等于设备的宽度
+    initial-scale=1.0 初始缩放比例, 1不缩放
+    maximum-scale：允许用户缩放到的最大比例
+    minimum-scale：允许用户缩放到的最小比例
+    user-scalable：用户是否可以手动缩放
+    * */
+    console.log(window.innerWidth, window.innerHeight);
+</script>
+</body>
+</html>
